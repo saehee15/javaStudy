@@ -1,5 +1,6 @@
 # 자바 스터디 TIL
-
+남궁석 저 자바의 정석으로 스터디 진행 <br/>
+챕터 각자 공부 후, 연습문제 풀어오기! 연습문제에 대해 같이 토론
 
 1. [Chapter 02 변수 variable](#chapter-02-변수-variable)
 2. [Chapter 04 조건문과 반복문](#chapter-04-조건문과-반복문)
@@ -14,8 +15,12 @@
 - 스터디 일자: 2022.04.24(일) <br/>
 - 실 공부일자: 2022.04.24(일)
  </blockquote>
-
 <br/>
+
+ ### 2. 스터디에서 깨달은점
+ 3 + '0' = '3' 숫자 + 문자는 문자 <br/>
+'3' - '0' = 3  문자 - 문자는 숫자
+<br/><br/><br/>
 
 # Chapter 04 조건문과 반복문
  <blockquote>
@@ -61,7 +66,7 @@ public class test15 {
 ```
 교재에 나와있는 답은 위의 코드인데,<br />
 스터디 멤버 중에 한분은 int number를 string으로 바꾸고, 첫번째와 다섯번째, 두번째와 네번째를 비교하는 방식으로 해서 회문수인지 판별하도록 코드를 짜심! 오호 이 방식이 확실히 이해가 더 쉬움! <br/>
-그분은... Character.getNumericValue() 메소드를 사용하였으나, 코드를 봤지만 정확히 기억은 안나고, 나는 아래와 같이 다시 짜봄!
+그분은... Character.getNumericValue() 메서드를 사용하였으나, 코드를 봤지만 정확히 기억은 안나고, 나는 아래와 같이 다시 짜봄!
 ```java
 public class test15 {
 
@@ -91,19 +96,143 @@ public class test15 {
 <br />
 ### 문자열 <-> 숫자 변환 참고: https://hianna.tistory.com/524
 
-<br/>
+<br/><br/><br/>
 
 # Chapter 05 배열 arrary
  <blockquote>
-- 스터디 일자: 2022.05.08(일) <br/>
+- 스터디 일자: 2022.05.08(일) 예정<br/>
 - 실 공부일자: 2022.05.05(목) ~ 08(일)
  </blockquote>
  
  <br/>
 
 ### 1. 공부내용 & 느낌점
+> TIL 2022.05.05(목)~06(금))
+
+- 배열이란? 같은 타입의 여러 변수를 하나의 묶음으로 다루는 것을 '배열(array)'라고 한다
+- 배열의 선언과 생성 <br/>
+배열의 선언방법과 선언 예 <br/>
+
+|선언방법|선언예|
+|----|----|
+|타입[]변수이름;|int[] score;<br/>String[] name;|
+|타입 변수이름[];|int score[];<br/>String name[];|
+
+- 배열의 생성: new 연산자와 함께!<br/>
+int[] score;<br/>
+score = new int[5];
+
+- 길이가 0인 배열도 생성 가능하다
+- 배열이름.length 통해서 배열의 길이 알수있음!
+- 배열은 한번 생성되면 길이를 변경할수가 X 따라서 배열의 길이를 넉넉하게 잡아줘야함! 그렇다고 너무 길게 잡으면 메모리 낭비함으로, 기존의 2배정도로!
+- 배열 길이를 변경하는법! <br /> 1. 더 큰 배열을 새로 생성<br/>2. 기존 배열의 내용을 새로운 배열에 복사
+- System.arraycopy()를 이용한 배열의 복사
+<br />System.arraycopy(num, 0, newNum, 0, num.length);
+<br />: num[0]에서 newNum[0]으로 num.length개의 데이터 복사
+- 배열의 활용 p196~205 까지 예제문제 풀어봄 <br/>
+  - 총합과 평균    
+  - 최대값과 최소값   
+  - 섞기(shuffle)   
+  - 임의의 값으로 배열 채우기   
+  - 정렬하기(sort)   
+  - 빈도수 구하기   
+  </br>  
+- 위의 예제풀이를 바탕으로 로또번호 추출하는 코드를 짜보기!!!!
+```java
+import java.util.Arrays;
+
+public class lotto {
+
+	public static void main(String[] args) {
+		// 6자리 배열 생성
+		// 1~45까지 랜덤으로 가져오기
+		// 중복값 없어야함
+		// sort
+
+		int[] lotto = new int[6];
+		
+		for(int i=0; i<lotto.length; i++) {
+			lotto[i] = (int)((Math.random()*45)+1);
+			
+			for(int j=0; j<i; j++) {
+				if(lotto[i] == lotto[j]) 
+					i--;
+			}	  
+		}
+		
+		Arrays.sort(lotto);
+		
+		for(int i=0;i<6;i++)
+			System.out.print(lotto[i] + " ");	
+	}
+
+}
+```
+
+<br/>
+
+- String 클래스의 주요 메서드
+
+|메서드|설명|
+|-----------|-------------|
+|char charAt(int index)|문자열에서 해당 위치(index)에 있는 문자를 반환|
+|int length()|문자열의 길이를 반환
+|String substring(int from, int to)|문자열에서 해당범위(from~to)에 있는 문자열을 반환 <br/>to는 범위에 포함되지 않음
+|boolean equals(Object obj)|문자열의 내용이 obj와 같은지 확인 <br/>같으면 true, 다르면 flase
+|char[]toCharArray()|문자열을 문자배열(char[])로 변환해서 반환
 
 
+- 다차원 배열
 
+|선언방법|선언예|
+|----|----|
+|타입[]변수이름;|int[] score;<br/>String[] name;|
+|타입 변수이름[];|int score[];<br/>String name[];|
+
+- 2차원 배열의 총합, 평균 구하기 코드
+```java
+public class test5_4 {
+
+	public static void main(String[] args) {
+		// 2차원 배열 arr에 담긴 모든 값의 총합과 평균을 구하는 프로그램을 완성
+		
+		int[][] arr = {
+				{5,5,5,5,5},
+				{10,10,10,10,10},
+				{20,20,20,20,20},
+				{30,30,30,30,30}
+		};
+		
+		int total = 0;
+		int length = 0;
+		float average =0;
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j< arr[i].length; j++) {
+				total += arr[i][j];
+			}
+		length += arr[i].length;
+         // average = total/(float)(arr.length * arr[i].length);	
+		 // 모든 값의 평균이니까 arr.length * arr[i].length 로 계산으로 처음에는 했는데,
+		 // 이러면은 배열이 가변배열일때 계산이 안맞아서 길이 변경함
+		 
+		 average = total/(float)(length);	
+		 
+		}
+		System.out.println("length="+length);
+		System.out.println("total="+total);
+		System.out.println("average="+average);
+	}
+
+}
+```
+- 챕터 연습문제 1~5까지 품, 위의 코드는 연습문제4번! 근디 교재의 답이라는 다르게 풀이함
+<br/><br/>
+> TIL 2022.05.07(토)
+- Do to list 
+<br/>연습문제 6~ 문제풀기!!
+
+<br/><br/>
 
 ### 2. 스터디에서 깨달은점
+
