@@ -61,7 +61,7 @@ public class test15 {
 ```
 교재에 나와있는 답은 위의 코드인데,<br />
 스터디 멤버 중에 한분은 int number를 string으로 바꾸고, 첫번째와 다섯번째, 두번째와 네번째를 비교하는 방식으로 해서 회문수인지 판별하도록 코드를 짜심! 오호 이 방식이 확실히 이해가 더 쉬움! <br/>
-그분은... Character.getNumericValue() 메소드를 사용하였으나, 코드를 분명 봤는데 정확히 기억은 안나고, 나는 아래와 같이 다시 짜봄
+그분은... Character.getNumericValue() 메소드를 사용하였으나, 코드를 봤지만 정확히 기억은 안나고, 나는 아래와 같이 다시 짜봄!
 ```java
 public class test15 {
 
@@ -85,8 +85,11 @@ public class test15 {
 	}
 }
 ```
-### Character.getNumericValue()
-
+* Character.getNumericValue() :  char형태를 int로 변환
+* String -> int 문자열을 숫자로 변환하기 위해서는  Integer.parseInt(),  Integer.valueOf() 
+* int -> String 숫자를 문자열로 변환하기 위해서는  Integer.toString(),  String.valueOf(),  int + ""  
+<br />
+### 문자열 <-> 숫자 변환 참고: https://hianna.tistory.com/524
 
 <br/>
 
@@ -99,6 +102,7 @@ public class test15 {
  <br/>
 
 ### 1. 공부내용 & 느낌점
+
 
 
 
