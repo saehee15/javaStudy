@@ -294,8 +294,8 @@ public class test5_7 {
 ```
 출력예제
 
-<img src="img/console1.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img> 
-<img src="img/console2.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
+<img src="img/console1.png" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img> 
+<img src="img/console2.png" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
 
 <br/><br/>
 
