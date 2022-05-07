@@ -107,7 +107,7 @@ public class test15 {
  <br/>
 
 ### 1. 공부내용 & 느낌점
-> TIL 2022.05.05(목)~06(금))
+> TIL 2022.05.05(목)~06(금)
 
 - 배열이란? 같은 타입의 여러 변수를 하나의 묶음으로 다루는 것을 '배열(array)'라고 한다
 - 배열의 선언과 생성 <br/>
@@ -229,9 +229,78 @@ public class test5_4 {
 - 챕터 연습문제 1~5까지 품, 위의 코드는 연습문제4번! 근디 교재의 답이라는 다르게 풀이함
 <br/><br/>
 > TIL 2022.05.07(토)
-- Do to list 
-<br/>연습문제 6~ 문제풀기!!
+* 연습문제 6~8까지 품, 아니 3문제 푸는데 왜케 오래걸리지,좀 더 응용해서 풀려고 했지만! 그 중에 하나 연습문제 7번 응용한 코드    
+거스름돈 입력받아서 어떻게 동전을 주면 되는지에 대한 코드
+```java
+import java.util.Scanner;
 
+public class test5_7 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("거스름돈 >");
+		String input = scanner.nextLine();
+		int money = Integer.parseInt(input);
+		
+		if(money < 0) {
+			System.exit(0);
+		} 
+		
+		int[] coinUnit = {500, 100, 50, 10};
+		int[] coin = {5, 5, 5, 5}; 
+		
+		for(int i=0; i<coinUnit.length; i++) {
+			int coinNum =0;
+			
+			coinNum = money/coinUnit[i];
+			
+			if(coin[i] >= coinNum) {
+				coin[i] -=coinNum; // coin[i]가 남는 동전의 개
+			} else {
+				coinNum = coin[i];
+				coin[i] = 0; // coin[i]가 남는 동전의 개
+			}
+			
+//			money = money - (coinNum*coinUnit[i]);
+			money -= coinNum*coinUnit[i];
+	
+			
+			System.out.println(coinUnit[i]+"원: "+coinNum);
+
+		}
+		if(money > 0) {
+			System.out.println("거스름돈이 부족니다.");
+			System.out.println("부족한 금액:"+ money);
+			System.out.println("= 필요 동전의 개수 =");
+			
+			for(int i = 0; i < coinUnit.length; i++) {
+				System.out.println(coinUnit[i]+"원:"+ money/coinUnit[i]);
+				money = money%coinUnit[i];
+			}
+			
+			System.exit(0);
+		}
+		System.out.println("= 남은 동전의 개수 =");
+		
+		for(int i = 0; i < coinUnit.length; i++) {
+			System.out.println(coinUnit[i]+"원:" +coin[i]);
+		}
+				
+	}
+
+}
+```
+출력예제
+
+<img src="img/console1.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img> 
+<img src="img/console2.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
+
+<br/><br/>
+
+> TIL 2022.05.08(일)
+* to do list 연습문제 9~13까지 풀기
 <br/><br/>
 
 ### 2. 스터디에서 깨달은점
