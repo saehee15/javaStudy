@@ -292,7 +292,7 @@ public class test5_7 {
 
 }
 ```
-출력예제
+출력예
 
 <img src="img/console1.png" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img> 
 <img src="img/console2.png" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
@@ -300,8 +300,49 @@ public class test5_7 {
 <br/><br/>
 
 > TIL 2022.05.08(일)
-* to do list 연습문제 9~13까지 풀기
+* to do list 연습문제 9~13까지 풀기 ✔️
+* 커맨드라인 입력 : 이클립스 실행 시 매개값 주어 실행하는 방법   
+Run -> Run Confiaurations -> Arguments 에서 매개값 입력    
+<img src="img/run.png" width="80%" height="80%" title="px(픽셀) 크기 설정" alt="출력예제"></img>   
+<img src="img/configuration.png" width="60%" height="60%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
 <br/><br/>
+```java
+public class exam5_17 {
 
+	public static void main(String[] args) {
+		// 커맨드라인을 통해 입력
+		
+		if(args.length !=3) {
+			System.out.print("usage: exam5_17 NUM1 OP NUM2");
+			System.exit(0);
+		}
+		int num1 = Integer.parseInt(args[0]);
+		char op = args[1].charAt(0);
+		int num2 = Integer.parseInt(args[2]);
+		int result = 0;
+		
+		switch(op) {
+			case '+' :
+				result = num1 + num2;
+				break;
+			case '-' :
+				result = num1 - num2;
+				break;
+			case 'x':
+				result = num1 * num2;
+				break;
+			case '/':
+				result = num1 / num2;
+				break;
+			default: 
+				System.out.println("지원되지 않는 연산니다.");
+		}
+		System.out.println("결과:"+result);
+
+	}
+```
+위의 코드를 Run Confiaurations에서 10 + 20 를 매개값으로 나오면 결과:30이 출력
+
+<br /><br /><br />
 ### 2. 스터디에서 깨달은점
 
