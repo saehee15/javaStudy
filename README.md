@@ -344,5 +344,18 @@ public class exam5_17 {
 위의 코드를 Run Confiaurations에서 10 + 20 를 매개값으로 넣으면 결과:30이 출력
 
 <br /><br /><br />
-### 2. 스터디에서 깨달은점
+### 2. 스터디에서 깨달은점 
+char배열에서 String으로 변환이 아직 헷갈림 
+char[] chArr = {'A','B','C'};   
+String str = new String(chArr); // char배열 -> String   
+System.out.println(str);  // ABC   
+
+char[] tmp = str.toCharArray(); // String -> char배열   
+System.out.println(tmp[0]); //A
+
+String[] stringArray = {str};   
+System.out.println(stringArray[0]); //ABC
+
+
+
 
