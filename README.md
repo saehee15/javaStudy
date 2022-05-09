@@ -4,7 +4,9 @@
 
 1. [Chapter 02 변수 variable](#chapter-02-변수-variable)
 2. [Chapter 04 조건문과 반복문](#chapter-04-조건문과-반복문)
-3. [Chapter 05 배열 arrary](#chapter-05-배열-arrary)
+3. [Chapter 05 배열 arrary](#chapter-05-배열-arrary)   
+4. [Chapter 06 객체지향 프로그래밍1](#chapter-06-객체지향-프로그래밍1)
+
 
 
 
@@ -94,13 +96,14 @@ public class test15 {
 * String -> int 문자열을 숫자로 변환하기 위해서는  Integer.parseInt(),  Integer.valueOf() 
 * int -> String 숫자를 문자열로 변환하기 위해서는  Integer.toString(),  String.valueOf(),  int + ""  
 <br />
+
 ### 문자열 <-> 숫자 변환 참고: https://hianna.tistory.com/524
 
 <br/><br/><br/>
 
 # Chapter 05 배열 arrary
  <blockquote>
-- 스터디 일자: 2022.05.08(일) 예정<br/>
+- 스터디 일자: 2022.05.08(일)<br/>
 - 실 공부일자: 2022.05.05(목) ~ 08(일)
  </blockquote>
  
@@ -344,7 +347,8 @@ public class exam5_17 {
 위의 코드를 Run Confiaurations에서 10 + 20 를 매개값으로 넣으면 결과:30이 출력
 
 <br /><br /><br />
-### 2. 스터디에서 깨달은점 
+### 2. 스터디에서 깨달은점
+
 char배열에서 String으로 변환이 아직 헷갈림 
 char[] chArr = {'A','B','C'};   
 String str = new String(chArr); // char배열 -> String   
@@ -355,6 +359,92 @@ System.out.println(tmp[0]); //A
 
 String[] stringArray = {str};   
 System.out.println(stringArray[0]); //ABC
+
+# Chapter 06 객체지향 프로그래밍1
+ <blockquote>
+- 스터디 일자: 2022.05.15(일)<br/>
+- 실 공부일자: 2022.05.09(월) ~ 
+</blockquote>    
+<br />
+
+### 1. 공부내용 & 느낌점
+> TIL 2022.05.09(월)
+
+* 객체지향이론의 기본개념은 '실제 세계는 사물(객체)로 이루어져 있으며, 발생하는 모든 사건들은 사물간의 상호작용이다' 라는 것.
+실제 사물의 속성과 기능을 분석한 다음, 데이터(변수)와 함수로 정의함으로써 실제 세계를 컴퓨터 속에 옮겨 놓은 것과 같음
+
+* 객체지향이론은 상속, 캡슐화, 추상화 개념을 중심으로 구체적으로 발전
+* 객체지향언의 특징    
+1. 코드의 재사용이 높고, 2. 코드의 관리가 용이, 3. 신뢰성 높은 프로그램 가능
+* 클래스는 객체의 설계도, 객체는 실제로 존재하는것(무형, 유형) ex) 클래스 TV설계도, 객체 TV
+* 클래스로부터 객체를 만드는 과정을 클래스의 인스턴스화(instantiate)라고 하고, 어떤 클래스로부터 만들어진 객체를 그 클래스의 인스턴스(instance)라고 한다.
+* 객체는 속성과 기능으로 구성됨, 속성과 기능을 그 객체의 멤버(구성원, member)라고 한다.
+
+|||
+|----|----|
+|속성(property)|멤버변수(member variable)✔️, 특성(attribute), 필드(field), 상태(state)|
+|기능(function);|메서드(method)✔️, 함수(function), 행위(behavior)|
+* 클래스를 선언한 것은 설계도를 작성한것에 불과, 인스턴스를 생성해야 객체를 사용할수 있음,
+* 클래스로부터 인스턴스 생성하는 방법   
+클래스명 변수명; // 클래스의 객체를 참조하기 위한 참조변수 선언   
+변수명 = new 클래스명(); //클래스의 객채를 생성후, 객체의 주소에 참조변수 저장
+
+```java
+
+class Tv{
+	// Tv의 속성(멤버변수)
+	String color; // 색상
+	boolean power; // 전원상태(on/off)
+	int channel; // 채널 
+	
+	//Tv의 기능(메서드)	
+	void power() {power = !power;}   // TV를 켜거나 끄는 기능을 하는 메서드 
+	void channelUp() { ++channel; }  // TV의 채널을 높이는 기능을 하는 메서드 
+	void channelDown() { --channel;} // TV의 채널을 낮추는 기능을 하는 메서드 
+}
+
+public class exam6_1 {
+
+	public static void main(String[] args) {
+		
+		Tv t;            // 1. Tv인스턴스를 참조하기 위한 변수 t를 선언 
+		t = new Tv();    // 2. Tv인스턴스를 생성
+		t.channel = 7;   // 3. Tv인스턴스의 멤버변수는 channel 7로 
+		t.channelDown(); // 4. Tv인스턴스의 메서드 channelDown()를 호출
+		System.out.println("현재 채널은 " + t.channel + "입니다.");
+	}
+
+}
+
+```
+코드에 색깔이 이상하게 입혀지네, 무튼
+1. Tv t;   
+Tv클래스 타입의 참조변수 t선언, 메모리에 참조변수 t를 위한 공간이 마련, 아직 인스턴스 생성되지 않았으므로 참조변수로 아무것도 할수 없음
+2. t = new Tv();   
+연산자 new에 의해 Tv클래스의 인스턴스가 메모리의 빈 공간에 생성.
+이 떄, 멤버변수는 각 자료형의 해당하는 기본값으로 초기화됨
+(color는 참조형이므로 null, power는 boolean이므로 false, channel은 int이므로 0으로)
+그 다음 대입연산자(=)에 의해 생성된 객체의 주소값이 참조변수 t에 저장! 이제는 참조변수 t를 통해 Tv인스턴스에 접근할 수 있음, 인스턴스를 다루기 위해서는 참조변수가 반드시 필요!   
+Tv t;   
+t = new Tv(); 
+두 문장을 Tv t = new Tv(); 한 문장으로 가능
+
+3. t.channel = 7;   
+참조변수 t에 저장된 주소에 있는 인스턴스의 멤버변수 channel에 7을 저장한다. 인스턴스의 멤버변수(속성)을 사용하려면 참조변수.멤버변수(t.channel) 와 같이 사용
+4. t.channelDown();    
+참조변수 t가 참조하고 있는 Tv인스턴스의 channelDown메서드 호출
+<br/><br/>
+
+* 인스턴스는 참조변수를 통해서만 다룰 수 있으며, 참조변수의 타입은 인스턴스의 타입과 일치해야 한다! 
+* 인스턴스 두개가 같은 클래스로부터 생성되었을지라도, 각 인스턴스의 속성(멤버변수)은 서로 다른값으 유지 가능, 메서드의 내용은 모든 인스턴스에 대해 동일함
+* 자신을 참조하고 있는 참조변수 하나도 없는 인스턴스는 더 이상 사용되어질 수 없으므로 '가비지 컬렉터(Garbage Collector)에 의해 자동적으로 메모리에서 제거된다.
+* 참조변수에는 하나의 값(주소)만이 저장될 수 있으므로 둘 이상의 참조변수 하나의 인스턴스를 가리키는(참조하는) 것은 가능하지만 하나의 참조변수로 여러 개의 인스턴스를 가리키는 것은 불가능
+
+
+<br/> 
+
+### 2. 스터디에서 깨달은점
+ <br/>
 
 
 
