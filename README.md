@@ -297,8 +297,8 @@ public class test5_7 {
 ```
 출력예
 
-<img src="img/console1.png" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img> 
-<img src="img/console2.png" width="30%" height="30%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
+<img src="img/console1.png" width="30%" height="30%" alt="출력예제"></img> 
+<img src="img/console2.png" width="30%" height="30%" alt="출력예제"></img>
 
 <br/><br/>
 
@@ -306,8 +306,8 @@ public class test5_7 {
 * to do list 연습문제 9~13까지 풀기 ✔️
 * 커맨드라인 입력 : 이클립스 실행 시 매개값 주어 실행하는 방법   
 Run -> Run Confiaurations -> Arguments 에서 매개값 입력    
-<img src="img/run.png" width="80%" height="80%" title="px(픽셀) 크기 설정" alt="출력예제"></img>   
-<img src="img/configuration.png" width="60%" height="60%" title="px(픽셀) 크기 설정" alt="출력예제"></img>
+<img src="img/run.png" width="80%" height="80%" alt="출력예제"></img>   
+<img src="img/configuration.png" width="60%" height="60%" alt="출력예제"></img>
 <br/><br/>
 ```java
 public class exam5_17 {
@@ -364,7 +364,7 @@ System.out.println(stringArray[0]); //ABC
  <blockquote>
 - 스터디 일자: 2022.05.15(일)<br/>
 - 실 공부일자: 2022.05.09(월) ~ 
-</blockquote>    
+</blockquote>    s
 <br />
 
 ### 1. 공부내용 & 느낌점
@@ -442,6 +442,51 @@ t = new Tv();
 
 
 <br/> 
+
+> TIL 2022.05.10(화)
+* 객체 배열이란? 객체의 배열, 객체 배열 안에 객체가 저장 되는게 아니고, 객체의 주소가 저장됨!<br />사실 객체 별은은 참조 변수들을 하나로 묶은 참조 변수 배열인 것.   
+: 많은 수의 객체를 다뤄야 할 떄, 다양한 타입의 데이타를 객체 배열을 통해 저장할 때 사용
+* Tv[] tvArr = new Tv[3]; => 그저 객체를 다루기 위한 참조변수 3개만 생성된거지, 객체가 저장된거는 아님!!! 객체 생성해서 객체 배열의 각 요소에 저장해 줘야함
+
+<img src="img/array.png" width="80%" height="80%" alt="객체 배열"></img> 
+
+* Private와 Public 차이
+Private 멤버는 class 외부에서 접근할 수 없는 변수를,
+Public 멤버는 class 외부에서 접근 할 수 있는 변수를 의미
+Private 변수게 값을 대입하기 위해서는 public으로 제공하는 SET 함수를 사용하는 방식으로 해야함!
+```java
+public class Time {
+	
+	private int hour;
+	private int minute;
+	private float second;
+	
+	public int getHour() { return hour; }
+	public int getMinute() { return minute; }
+	public float getSecond() { return second; }
+	
+	
+	public void setHour(int h) {
+		if(h < 0 || h > 23) return;
+		hour = h;	
+	}
+	public void setMinute(int m) {
+		if(m < 0 || m > 59) return;
+		minute = m;	
+	}
+	public void setSecond(float s) {
+		if(s < 0 || s > 23) return;
+		second = s;	
+	}
+}
+
+```
+
+
+
+
+
+
 
 ### 2. 스터디에서 깨달은점
  <br/>
