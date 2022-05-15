@@ -581,9 +581,83 @@ Card c = new Card();
 ```
 
 
+> TIL 2022.05.15(일)  
+
+* 연습문제 Chapter6 1~24번 문제
+```
+4번 문제
+소수점 2번째 자리수에서 반올림하기
+236/3 →78
+236 / 3f → 78.666664
+236 / 3f * 10 → 786.66664
+236 / 3f * 10 + 0.5(반올림이니까) → 787.16664
+(int)(236 / 3f * 10 + 0.5) → (int)787.16664 → 787 
+(int)(236 / 3f * 10 + 0.5) / 10 → 78
+(int)(236 / 3f * 10 + 0.5) / 10f → 78.7
 
 
+```
 
+```
+6번 문제   
+Math.sqrt: 제곱근 계산 ex) Math.sqrt(double a)
+Math.pow: 제곱 계산 ex) Math.pow(double a, double b)
+```
+
+```
+8번 문제
+코드에 정의된 변수들 종류별로 구분하시오
+
+public class PlayingCard {
+	
+	int kind;
+	int num;
+	
+	static int width;
+	static int height;
+	
+	PlayingCard (int k, int n){
+		kind = k;
+		num = n;
+	}
+
+	public static void main(String[] args) {
+		PlayingCard card = new PlayingCard(1,1);
+	}
+}
+
+- 클래스변수(static변수) : width, height 
+- 인스턴스변수 : kind, num
+- 지역변수 : k, n, card, args
+
+```
+
+<img src="img/변수.png" width="70%" height="70%" alt="출력예제"></img> 
+
+```
+19번 다음 코드의 실행 결과를 예측하여 적으시오.
+
+public class test19 {
+
+	public static void change(String str) {
+		str += "456";
+	}
+	
+	public static void main(String[] args) {
+		
+		String str = "ABC123"; 
+		System.out.println(str);
+		change(str);
+		System.out.println("After change:"+str);
+	}
+}
+
+실행결과: 
+ABC123
+After change:ABC123
+
+문자열은 내용을 변경할 수 없기 때문에 덧셈연산을 하면 새로운 문자열이 생성되고 새로운 문자열의 주소가 변수 str에 저장된다. change메서드는 종료되고, 작업에 사용하던 메모리를 반환하므로 change메서드의 지 역변수인 str역시 메모리에서 제거된다. 다시 main메서드로 돌아와서 문자열 str의 값을 출력하면 처음의 값과 변함없는 값이 출력된다
+```
 
 
 
