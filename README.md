@@ -6,7 +6,7 @@
 2. [Chapter 04 조건문과 반복문](#chapter-04-조건문과-반복문)
 3. [Chapter 05 배열 arrary](#chapter-05-배열-arrary)   
 4. [Chapter 06 객체지향 프로그래밍1](#chapter-06-객체지향-프로그래밍1)
-5. [Chapter 06 객체지향 프로그래밍2](#chapter-06-객체지향-프로그래밍2)
+5. [Chapter 07 객체지향 프로그래밍2](#chapter-07-객체지향-프로그래밍2)
 
 
 
@@ -769,7 +769,7 @@ runtime, jar클래스 파일 묶어놓은것(압축파일), jar.exe 압축해제
 추상 메서드를 포함한 클래스가 추상클래스, 미완성 클래스, 미완성 설계도, 제품 생성불가, 객체 만들수 없음, 인스턴스 생성불가, 추상클래스를 상속받아서 완전한 클래스를 만들 후에 객체 생성가능 
 
 * 접근제어자 : 4개 중 한개만 사용 가능
-<img src="img/modifier.jpg" width="80%" height="80%" alt="출력예제"></img>
+<img src="img/modifier.jpg" width="60%" height="60%" alt="출력예제"></img>
 
 
 |제어자|같은클래스|같은패키지|자손클래스|전체|
@@ -793,6 +793,7 @@ runtime, jar클래스 파일 묶어놓은것(압축파일), jar.exe 압축해제
 ```
 SmartTv s = new SmartTv();
 Tv t = new SmartTv();
+```
 
 
 > TIL 2022.05.20~21(금~토)     
