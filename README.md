@@ -833,4 +833,10 @@ https://velog.io/@jybin96/Controller-Service-Repository-%EA%B0%80-%EB%AC%B4%EC%9
 * Math클래스 등은 생각해보면 Math.~~ 이렇게 접근하니까 static
 객체 생성없이 어디서든 접근가능
 
+> TIL 2022.05.21~25(월, 화, 수)
+
+자바의 정석 객체지향 하루 8강씩 보고 있음, 43강인가 42강이니 하루 8강씩 보면은 일요일까지 다 볼 수 있지   
+* do to list   
+25일 - 객체지향 생성자부터 ~~ super보기 
+
 
