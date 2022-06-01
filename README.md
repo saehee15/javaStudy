@@ -3,7 +3,7 @@
 챕터 각자 공부 후, 연습문제 풀어오기! 연습문제에 대해 같이 토론
 
 1. [Chapter 02 변수 variable](#chapter-02-변수-variable)
-2. [Chapter 04 조건문과 반복문](#chapter-04-조건문과-반복문)
+2. [Chapter 04 조건문과 반복문](#https://github.com/saehee15/javaStudy/tree/main/chapter04)
 3. [Chapter 05 배열 arrary](#chapter-05-배열-arrary)   
 4. [Chapter 06 객체지향 프로그래밍1](#chapter-06-객체지향-프로그래밍1)
 5. [Chapter 07 객체지향 프로그래밍2](#chapter-07-객체지향-프로그래밍2)
