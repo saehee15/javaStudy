@@ -29,7 +29,7 @@
  <blockquote>
 - 스터디 일자: 2022.05.01(일) <br/>
 - 실 공부일자: 2022.04.30(토) ~ 05.01(일) <br/>
-- chapter 03 연산자는 각자 하고 넘어가기로 함
+- chapter 03 연산자는 각자 하고 넘어가기로 함  <br/>
   https://github.com/saehee15/javaStudy/tree/main/chapter04
  </blockquote>
 
@@ -38,7 +38,7 @@
 # Chapter 05 배열 arrary
  <blockquote>
 - 스터디 일자: 2022.05.08(일)<br/>
-- 실 공부일자: 2022.05.05(목) ~ 08(일)
+- 실 공부일자: 2022.05.05(목) ~ 08(일)  <br/>
  https://github.com/saehee15/javaStudy/tree/main/chapter05
  </blockquote>
 
@@ -46,7 +46,7 @@
 # Chapter 06 객체지향 프로그래밍1
  <blockquote>
 - 스터디 일자: 2022.05.15(일)<br/>
-- 실 공부일자: 2022.05.09(월) ~ 
+- 실 공부일자: 2022.05.09(월) ~  <br/>
  https://github.com/saehee15/javaStudy/tree/main/chapter06
 </blockquote>   
 
@@ -55,7 +55,7 @@
 # Chapter 07 객체지향 프로그래밍2
  <blockquote>
 - 스터디 일자: 2022.05.21(토)<br/>
-- 실 공부일자: 2022.05.16(월) ~ 2022.05.21(토)
+- 실 공부일자: 2022.05.16(월) ~ 2022.05.21(토)  <br/>
  https://github.com/saehee15/javaStudy/tree/main/chapter07
 </blockquote>   
 <br />
