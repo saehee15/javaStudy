@@ -195,8 +195,8 @@ public class test5_7 {
 ```
 출력예
 
-<img src="img/console1.png" width="30%" height="30%" alt="출력예제"></img> 
-<img src="img/console2.png" width="30%" height="30%" alt="출력예제"></img>
+<img src="../img/console1.png" width="30%" height="30%" alt="출력예제"></img> 
+<img src="../img/console2.png" width="30%" height="30%" alt="출력예제"></img>
 
 <br/><br/>
 
@@ -204,8 +204,8 @@ public class test5_7 {
 * to do list 연습문제 9~13까지 풀기 ✔️
 * 커맨드라인 입력 : 이클립스 실행 시 매개값 주어 실행하는 방법   
 Run -> Run Confiaurations -> Arguments 에서 매개값 입력    
-<img src="img/run.png" width="80%" height="80%" alt="출력예제"></img>   
-<img src="img/configuration.png" width="60%" height="60%" alt="출력예제"></img>
+<img src="../img/run.png" width="80%" height="80%" alt="출력예제"></img>   
+<img src="../img/configuration.png" width="60%" height="60%" alt="출력예제"></img>
 <br/><br/>
 ```java
 public class exam5_17 {

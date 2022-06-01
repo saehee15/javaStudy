@@ -86,7 +86,7 @@ t = new Tv();
 : 많은 수의 객체를 다뤄야 할 떄, 다양한 타입의 데이타를 객체 배열을 통해 저장할 때 사용
 * Tv[] tvArr = new Tv[3]; => 그저 객체를 다루기 위한 참조변수 3개만 생성된거지, 객체가 저장된거는 아님!!! 객체 생성해서 객체 배열의 각 요소에 저장해 줘야함
 
-<img src="img/array.png" width="50%" height="50%" alt="객체 배열"></img> 
+<img src="../img/array.png" width="50%" height="50%" alt="객체 배열"></img> 
 
 * Private와 Public 차이
 Private 멤버는 class 외부에서 접근할 수 없는 변수를,
@@ -270,7 +270,7 @@ public class PlayingCard {
 
 ```
 
-<img src="img/변수.png" width="70%" height="70%" alt="출력예제"></img> 
+<img src="../img/변수.png" width="70%" height="70%" alt="출력예제"></img> 
 
 ```
 19번 다음 코드의 실행 결과를 예측하여 적으시오.
