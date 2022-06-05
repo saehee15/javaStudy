@@ -2,9 +2,9 @@
  <blockquote>
 - 실 공부일자: 2022.06.04(토) ~ 
 </blockquote>   
-<br />
+<br /><br />
 
-프로그램 오류
+## 프로그램 오류
 - 컴파일 에러 : 컴파일 할때 발생하는 에러
 javac.exe
 - 런타임 에러 : 실행할 때 발생하는 에러, 프로그램 종료
@@ -13,7 +13,7 @@ javac.exe
 <br/>
 
 
-java의 런타입 에러
+## java의 런타입 에러
 ```
 에러(error) : 프로그램 코드에 의해서 수습될 수 없는 심각한 오류 ex) out of memory error   
 예외(exception) : 프로그램 코드에 의해서 수습될 수 있는 다소 미약한 오류                         
@@ -24,7 +24,8 @@ java의 런타입 에러
 ```
 
 <br />
-Exception과 RuntimeException
+
+## Exception과 RuntimeException
 
 ```
 Exception 클래스들 : 사용자의 실수와 같은 외적인 요인에 의해 발생하는 예외
@@ -41,7 +42,7 @@ ClassCastException : 형변환
 NullPointerException : String str = null; 이런데 str.length 이러면 nullpointer 오류
 IndexOutBoundsException : 배열 범위 벗어나는 오류
 ```
-```
+```java
 try {
     예외가 발생할 가능성이 있는 문장들을 넣는다.
 } catch ( Exception e ) {
@@ -55,13 +56,14 @@ try {
 
 
 
-printStackTrace(), getMessage()
+## printStackTrace(), getMessage()
 ```
 printStackTrace() : 예외발생 당시의 호출스택(Call Stack)에 있었던 메서드의 정보와 예외 메시지를 화면에 출력한다.
 getMessage() : 발생한 예외클래스의 인스턴스에 저장된 메시지를 얻을 수 있다.
 ```
 
-멀티 catch 블록    
+
+## 멀티 catch 블록    
 : 내용이 같은 catch블럭을 하나로 합친 것(JDK1.7 부터)
 ```java
 try{
@@ -88,17 +90,38 @@ e.methodA();
 <br /><br />
 
 
-예외 발생시키기
+## 예외 발생시키기
 1. 연산자 new를 이용해서 발생시키려는 예외 클래스의 객체를 만든 다음  
 Exception e = new Exception("에러메세지")
 
 2. 키워드 throw를 이용해서 예외를 발생시킨다.   
 throw e;
 
+<br /><br />
 
 
-checked 예외, unchecked 예외
+
+## checked 예외, unchecked 예외
 - checked 예외: 컴파일러가 예외 처리를 여부를 체크(예외 처리 필수)
 Exception와 그 자손
 - unchecked 예외: 컴파일러가 예외처리 여부를 체크 안함(예외 처리 선택)
 RuntimeException와 자손
+
+<br /><br />
+
+ 
+## 메서드에 에외 선언하기
+
+예외를 처리하는 방법
+1. try-catch문 (내가 직접 처리)
+2. 예외 선언하기 (예외 떠넘기기 알리기)
+3. 은폐 (덮기) - 빈 catch문
+
+```java
+void method() throws Exception1, Exception2, ....{
+
+}
+``` 
+
+## finally블록     
+: 에외 발생여부와 관계없이 수행되어야 하는 코드를 넣는다.
