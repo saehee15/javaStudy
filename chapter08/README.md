@@ -109,6 +109,7 @@ RuntimeException와 자손
 
 <br /><br />
 
+
  
 ## 메서드에 에외 선언하기
 
@@ -122,6 +123,54 @@ void method() throws Exception1, Exception2, ....{
 
 }
 ``` 
+<br /><br />
 
 ## finally블록     
 : 에외 발생여부와 관계없이 수행되어야 하는 코드를 넣는다.
+
+<br /><br /><br />
+
+
+## 느낀점
+아쉽게 스터디모임이 파토났다. 그래도 일주일에 한 챕터씩 공부해서 기록은 남길려고 한다.    
+6월 첫째주는 chapter8 예외처리에 대해 공부했다.      
+try catch문은 학원에서 이번주에 내내 했던거라 낯설지는 않다.   
+이번 주 학원에서 게시판, 회원가입 화면을 만들면서 dao파일을 만들고, 그 안에 try catch문을 썼기 때문이지     
+그때는 그냥 따라쳤지만, 이제는 구조가 좀 보임   
+학원에서 했던 코드 
+```java
+try {
+			Class.forName(CommonUtil.driver_class);
+			conn = DriverManager.getConnection(CommonUtil.db_url,
+					CommonUtil.username,
+					CommonUtil.password);
+			
+			String sql= "insert into tb_member(userid, pwd, username"
+							+ ", phone, email, wdate, activeyn) values( "
+							+ " ?,  ? ,  ?,  ?,  ?, now(), 'Y' )";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getUserid());
+			pstmt.setString(2, dto.getPwd());
+			pstmt.setString(3, dto.getUsername());
+			pstmt.setString(4, dto.getPhone());
+			pstmt.setString(5, dto.getEmail());
+			
+			pstmt.execute();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+```
+그리고 printStackTrace도 보이고, ClassNotFoundException, SQLException예 대해서도 알겠음
