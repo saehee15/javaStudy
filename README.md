@@ -8,6 +8,7 @@
 4. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter06">Chapter 06 객체지향 프로그래밍1</a>
 5. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter07">Chapter 07 객체지향 프로그래밍2</a>
 6. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter08">Chapter 08 예외처리</a>
+6. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter09">Chapter 09 java.lang 패키지와 유용한 클래스</a>
 
 
 
@@ -60,6 +61,12 @@
 
 # Chapter 08 예외처리
  <blockquote>
-- 실 공부일자: 2022.06.04(토) ~ <br/>
+- 실 공부일자: 2022.06.04(토) ~ 2022.06.05(일)<br/>
+</blockquote>
+<br /><br />
+
+# Chapter 09 java.lang 패키지와 유용한 클래스
+ <blockquote>
+- 실 공부일자: 2022.06.06(월)<br/>
 </blockquote>
 <br /><br />
