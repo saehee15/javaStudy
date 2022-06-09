@@ -123,3 +123,15 @@ StringBuffer sb2 = new StringBuffer("abc");
 System.out.println(sb == sb2);  // false
 System.out.println(sb.equals(sb2)); // false
 ```
+
+## StringBuffer의 생성자와 메서드
+|메서드/설명|예제|결과
+|------------|-------------|---------------|
+|StringBuffer()<br/>16문자를 담을 수 있는 버퍼를 가진 StringBuffer 인스턴스를 생성한다.|StringBuffer sb = new StringBuffer();|sb = ""
+|StringBuffer(int length)<br/>지정된 개수의 문자를 담을 수 있는 버퍼를 가진 StringBuffer인스턴스를 생성한다.|StringBuffer sb = new StringBuffer(10);|sb = ""
+|StringBuffer(String str)<br/>지정된 문자열 값(str)을 갖는 StringBuffer 인스턴스를 생성한다.|StringBuffer sb = "new StringBuffer("Hi");|sb = "Hi"
+|StringBuffer append(boolean b)<br/>StringBuffer append(char c)<br/>StringBuffer append(char[] str)<br/>StringBuffer append(double d)<br/>StringBuffer append(float f)<br/>StringBuffer append(int i)<br/>StringBuffer append(long l)<br/>StringBuffer append(Object obj)<br/>StringBuffer append(String str)<br/>매개변수로 입력된 값을 문자열로 변환하여 StringBuffer인스턴스가 저장하고 있는 문자열의 뒤에 덧붙인다.|StringBuffer sb = new StringBuffer("abc");<br/>StringBuffer sb2 = sb.append(true);<br/>sb.append('d').append(10.0f);<br/><br/>StringBuffer sb3 = sb.append("ABC").append(123);|sb = "abctrued10.0ABC123" <br/> sb2 = "abctrued10.0ABC123" <br/> sb3 = "abctrued10.0ABC123" 
+|int capacity()<br/>StringBuffer인스턴스의 버퍼크기를 알려준다. length()는 버퍼에 담긴 문자열의 길이를 알려준다.|StringBuffer sb = new StringBuffer(100);<br/>sb.append("abcd");<br/>int bufferSize = sb.capacity();<br/>int stringSize = sb.length();|bufferSize = 100 <br/> stringSize = 4 (sb에 담긴 문자열이 "abcd이므로")
+|char charAt(int index)<br/>지정된 위치(index)에 있는 문자를 반환한다.|StringBuffer sb = new StringBuffer("abc"); <br/> char c = sb.charAt(2);| c = 'c'
+|StringBuffer delete(int start, int end)<br/>시작위치(start)부터 끝 위치(end) 사이에 있는 문자를 제거한다. 단, 끝 위치의 문자는 제외|StringBuffer sb = new StringBuffer("0123456"); <br/> StringBuffer sb2 = sb.delete(3,6)|sb = "0126" <br/> sb2 = "0126" 
+|StringBuffer deleteCharAt(int index)<br/>지정된 위치(index)의 문자를 제거한다.|StringBuffer sb = new StringBuffer("0123456"); <br/>sb.deleteCharAt(3);|sb = "012456"
