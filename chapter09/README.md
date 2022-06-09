@@ -111,10 +111,13 @@ Integer i2 = Integer.valueOf("100"); // 원래는 반환 타입이 Integer
 
 <br/><br/>
 ## StringBuffer클래스
-: String처럼 문자형 배열(char[])을 내부적으로 가지고 있다.
-: 그러나 String과 달리 내용을 변경할 수 있다.(mutable 가변)
-: StringBuffer는 equals()가 오버라이딩 되어있지 않다. (즉 주소비교함)
--> 그래서 StringBuffer를 String으로 변환 후에 equals()로 비교해야 함
+: String처럼 문자형 배열(char[])을 내부적으로 가지고 있다.<br/>
+: StringBuffer 클래스는 내부적으로 버퍼(buffer)라고 하는 독립적인 공간을 가진다.
+버퍼 크기의 기본값은 16개의 문자를 저장할 수 있는 크기이며, 생성자를 통해 그 크기를 별도로 설정할 수도 있다.
+하지만 인스턴스 생성 시 사용자가 설정한 크기보다 언제나 16개의 문자를 더 저장할 수 있도록 여유 있는 크기로 생성된다. <br/>
+: String과 달리 내용을 변경할 수 있다.(mutable 가변) <br/>
+: StringBuffer는 equals()가 오버라이딩 되어있지 않다. (즉 주소비교함) <br/>
+-> 그래서 StringBuffer를 String으로 변환 후에 equals()로 비교해야 함 <br/>
 
 ```java
 StringBuffer sb = new StringBuffer("abc");
@@ -135,3 +138,61 @@ System.out.println(sb.equals(sb2)); // false
 |char charAt(int index)<br/>지정된 위치(index)에 있는 문자를 반환한다.|StringBuffer sb = new StringBuffer("abc"); <br/> char c = sb.charAt(2);| c = 'c'
 |StringBuffer delete(int start, int end)<br/>시작위치(start)부터 끝 위치(end) 사이에 있는 문자를 제거한다. 단, 끝 위치의 문자는 제외|StringBuffer sb = new StringBuffer("0123456"); <br/> StringBuffer sb2 = sb.delete(3,6)|sb = "0126" <br/> sb2 = "0126" 
 |StringBuffer deleteCharAt(int index)<br/>지정된 위치(index)의 문자를 제거한다.|StringBuffer sb = new StringBuffer("0123456"); <br/>sb.deleteCharAt(3);|sb = "012456"
+|StringBuffer insert(int pos, boolean b)<br/>StringBuffer insert(int pos, char c)<br/>StringBuffer insert(int pos, char[] str)<br/>StringBuffer insert(int pos, double d)<br/>StringBuffer insert(int pos, float f)<br/>StringBuffer insert(int pos, int i)<br/>StringBuffer insert(int pos, long l)<br/>StringBuffer insert(int pos, Object obj)<br/>StringBuffer insert(int pos, String str)<br/>두 번째 매개변수로 받은 값을 문자열로 반환하여 지정된(pos)에 추가한다. pos는 0부터 시작<br/>|StringBuffer sb = newStringBuffer("0123456");<br/>sb.insert(4,'.');|sb = "0123.456"
+|int length()<br/>StringBuffer인스턴스에 저장되어 있는 문자열의 길이를 반환한다.|StringBuffer sb = newStringBuffer("0123456");<br/>int length = sb.length();|length = 7
+|StringBuffer replace(int start, int end, String str)<br/>지정된 범위(start~end)의 문자들을 주어진 문자열로 바꾼다. end위치의 문자는 범위에 포함되지 않음(start <= x < end)|StringBuffer sb = newStringBuffer("0123456");<br/>sb.replace(3,6,"AB");|sb = "012AB6" "345"가 "AB"로 바뀌었다.
+|StringBuffer reverse()<br/>StringBuffer인스턴스에 저장되어 있는 문자열의 순서를 거꾸로 나열한다.|StringBuffer sb = new StringBuffer("0123456");<br/>sb.reverse();|sb = "6543210"
+|void setCharAt(int index, char ch)<br/>지정된 위치의 문자를 주어진 문자(ch)로 바꾼다.|StringBuffer sb = new StringBuffer("0123456");<br/>sb.setCharAt(5,'o');|sb = "01234o6"
+|void setLength(int newLength)<br/>지정된 길이로 문자열의 길이를 변경한다. 길이를 늘리는 경우에 나머지 빈 공간을 널문자 '\u0000'로 채운다.|StringBuffer sb = newStringBuffer("0123456"); <br/>sb.setLength(5);<br/><br/>StringBuffer sb2 = new StringBuffer("0123456");<br/>sb2.setLength(10);<br/>String str = sb2.toString().trim();|sb = "01234" <br/> sb2 = "0123456   " <br/>str = "0123456"
+|String toString()<br/>StringBuffer인스턴스의 문자열을 String으로 반환|StirngBuffer sb = new StringBuffer("0123456");<br/>Stirng str = sb.toString();|str = "0123456"
+|String substring(int start)<br/> String substring(int start, int end)<br/>지정된 범위 내의 문자열을 String으로 뽑아서 반환한다. 시작위치(start)만 지정하면 시작위치부터 문자열 끝까지 뽑아서 반환한다.|StringBuffer sb = new StringBuffer("0123456");<br/>String str = sb.substring(3);<br/>String str2 = sb.substring(3,5);|str = "3456"<br/>str2 = "34"
+
+<br/><br/>
+## StringBuilder 
+: StringBuffer는 동기화 되어있다. 멀티 쓰레드에 안전,
+: StringBuilder는 동기화 X
+: 멀티 쓰레드 프로그램이 아닌 경우, 동기화는 불필요한 성능저하, 이럴 땐 StringBuffer 대신 StringBuilder를 사용하면 성능 향상
+
+```java
+StringBuffer ab;
+ab = new StringBuffer();
+ab.append("abc");
+
+StringBuilder ab;
+ab = new StringBuilder();
+ab.append("abc");
+```
+<br/><br/>
+## Math클래스 메서드
+math클래스는 익숙하니까 몰랐던 것만 적을래
+|메서드/설명|예제|결과
+|------------|-------------|---------------|
+|static double rint(double a)<br/>주어진 double값과 가장 가까운 정수값을 double형으로 반환한다. 단 두 정수의 정가운데 있는 값(1.5,2.5,3.5 등)은 짝수를 반환|double d = Math.rint(1.2);<br/>double d = Math.rint(2.6);<br/>double d = Math.rint(3.5);<br/>double d = Math.rint(4.5);<br/>| d = 1.0 <br /> d2 = 3.0 <br />d3 = 4.0 <br />d4 = 4.0 <br />
+
+반올림에도 종류가 여러개!! rint라는 애도 있음
+
+
+<br/><br/><br/>
+
+## 느낀점
+- concat은 js나 java에서나 원데이터는 변함이 없네 <br/>
+- StringBuffer 의 delete는 원데이터도 변하네 <br/>
+- 왜왜 String타입은 delete가 없는가, 
+내가 String타입 특징을 이해못하는건가
+밑에 String을 StringBuffer처럼 몇번째에서 몇번째까지 지우고 싶은데, 메소드를 못찾겠음 그나마 비슷한게 replace는 index가 아니고, "3" 대신 빈공간, 원데이터 변화없음, substring은 몇번째 부터 몇번째를 반환(index), replace나 substring은 String이나 StringBuffer 타입이나 다 있는데.. 음
+```java
+StringBuffer sb1 = new StringBuffer("0123456");
+StringBuffer sb2 = sb1.delete(3,6);
+System.out.println(sb1); // 0126
+System.out.println(sb2); // 0126
+	    
+String sb3 = "0123456";
+String sb4 = sb3.replace("3", "");
+System.out.println(sb3); // 0123456
+System.out.println(sb4); // 012456
+
+String sb5 = "0123456";
+String sb6 = sb5.substring(3,6);
+System.out.println(sb5); //0123456
+System.out.println(sb6); //345 
+```
