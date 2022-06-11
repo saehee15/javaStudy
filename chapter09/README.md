@@ -169,14 +169,16 @@ math클래스는 익숙하니까 몰랐던 것만 적을래
 |------------|-------------|---------------|
 |static double rint(double a)<br/>주어진 double값과 가장 가까운 정수값을 double형으로 반환한다. 단 두 정수의 정가운데 있는 값(1.5,2.5,3.5 등)은 짝수를 반환|double d = Math.rint(1.2);<br/>double d = Math.rint(2.6);<br/>double d = Math.rint(3.5);<br/>double d = Math.rint(4.5);<br/>| d = 1.0 <br /> d2 = 3.0 <br />d3 = 4.0 <br />d4 = 4.0 <br />
 
-반올림에도 종류가 여러개!! rint라는 애도 있음
+반올림에도 종류가 여러개!! rint라는 애도 있음 
+### rint round 차이 확인 <a herf="https://github.com/saehee15/javaStudy/blob/main/chapter09/rint.java">클릭</a>
+<br/><br/>
 
 ## 래퍼(wrapper) 클래스
 : 기본형 값을 감싸는 클래스, 8개의 기본형을 객체로 다뤄야할 떄 사용하는 클래스
 
 객체지향 언어에서는 모든것이 객체여야함 근디 자바는 기본형 존재, 그래서 자바는 90퍼쯤 객체지향언어, 완전히는 아님, 왜 모든것이 객체가 아니냐 하면 성능 때문에 그런데 
 
-
+<br/><br/>
 ## Number 클래스
 : 모든 숫자 래퍼 클래스의 조상
 래퍼 객체 -> 기본형
@@ -191,7 +193,7 @@ int i = Integer.parseInt("100");
 ```java
 Integer i = Integer.valueOf("100");
 ```
-
+<br/><br/>
 ## 오토박싱 & 언박싱
 int -> integer 오토박싱
 integer -> int 언박싱
