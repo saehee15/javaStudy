@@ -169,8 +169,8 @@ math클래스는 익숙하니까 몰랐던 것만 적을래
 |------------|-------------|---------------|
 |static double rint(double a)<br/>주어진 double값과 가장 가까운 정수값을 double형으로 반환한다. 단 두 정수의 정가운데 있는 값(1.5,2.5,3.5 등)은 짝수를 반환|double d = Math.rint(1.2);<br/>double d = Math.rint(2.6);<br/>double d = Math.rint(3.5);<br/>double d = Math.rint(4.5);<br/>| d = 1.0 <br /> d2 = 3.0 <br />d3 = 4.0 <br />d4 = 4.0 <br />
 
-반올림에도 종류가 여러개!! rint라는 애도 있음 
-### rint round 차이 확인 <a herf="https://github.com/saehee15/javaStudy/blob/main/chapter09/rint.java">클릭</a>
+반올림에도 종류가 여러개!! rint라는 애도 있음<br/>
+rint round 차이 확인 <a herf="https://github.com/saehee15/javaStudy/blob/main/chapter09/rint.java">클릭</a>
 <br/><br/>
 
 ## 래퍼(wrapper) 클래스
