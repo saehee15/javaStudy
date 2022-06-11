@@ -171,6 +171,57 @@ math클래스는 익숙하니까 몰랐던 것만 적을래
 
 반올림에도 종류가 여러개!! rint라는 애도 있음
 
+## 래퍼(wrapper) 클래스
+: 기본형 값을 감싸는 클래스, 8개의 기본형을 객체로 다뤄야할 떄 사용하는 클래스
+
+객체지향 언어에서는 모든것이 객체여야함 근디 자바는 기본형 존재, 그래서 자바는 90퍼쯤 객체지향언어, 완전히는 아님, 왜 모든것이 객체가 아니냐 하면 성능 때문에 그런데 
+
+
+## Number 클래스
+: 모든 숫자 래퍼 클래스의 조상
+래퍼 객체 -> 기본형
+```java
+int i = new Integer(100).intValue();
+```
+문자열 -> 기본형
+```java
+int i = Integer.parseInt("100");
+```
+문자열 -> 래퍼클래스
+```java
+Integer i = Integer.valueOf("100");
+```
+
+## 오토박싱 & 언박싱
+int -> integer 오토박싱
+integer -> int 언박싱
+
+-JDK1.5 이전에는 기본형과 참조형간의 연산이 불가능
+```java
+int i = 5;
+Integer iObj = new Integer(7);
+
+int sum = i + iObj; 
+// JDK1.5 이전에는 에러, 기본형과 참조형 연산 불가능, JDK1.5이 후 가능
+
+// 컴파일 전에는 
+int i = 5;
+Integer iObj = new Integer(7);
+
+int sum = i + iObj; 
+
+// 이랬던 코드가 컴파일 후에는
+int i = 5;
+Integer iObj = new Integer(7);
+
+int sum = i + iObj.intValue();
+// 이렇게 바뀌면서 연산 가능 
+```
+기본형의 값을 객체로 자동변환하는 것을 오토박싱, 그 반대는 언박싱
+
+
+
+
 
 <br/><br/><br/>
 
