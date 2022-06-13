@@ -1,7 +1,7 @@
 import java.util.Calendar;
 
 // date1과 date2 차이를 계산, 디데이 계산할때
-class deday {
+class dday {
     public static void main(String[] args){
         //  요일을 1부너 시작하기에, DAY_OF_WEEK[0]은 비어둠
         final String[] DAY_OF_WEEK = { "", "월", "화", "수", "목", "금", "토", "일"};
