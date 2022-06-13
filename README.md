@@ -67,6 +67,12 @@
 
 # Chapter 09 java.lang 패키지와 유용한 클래스
  <blockquote>
-- 실 공부일자: 2022.06.06(월)<br/>
+- 실 공부일자: 2022.06.06(월)~ 2022.06.12(일)<br/>
+</blockquote>
+<br /><br />
+
+# Chapter 10 날짜와 시간 & 형식화
+ <blockquote>
+- 실 공부일자: 2022.06.13(월)<br/>
 </blockquote>
 <br /><br />
