@@ -10,3 +10,16 @@ Calender cal = Calendar.getInstance(); // OK, getInstance()메서드는 Calendar
 - set()으로 날짜와 시간 지정하기
 - clear()는 Calendar객체의 모든 필드를 초기화
 - add()는 특정 필드의 값을 증가 또는 감소(다른 필드에 영향O)
+- roll()은 특정필드의 값을 증가 또는 감소(다른 필드에 영향X)
+```java
+Calendar date = Calendar.getInstance();
+date.clear();  // 모든 필드를 초기화
+date.set(2020, 7, 31); // 2020년 8월 31일로 설정
+
+date.add(Calendar.DATE, 1); // 날짜(DATE)에 1을 더한다 , 2020년 9월 1일
+date.add(Calendar.MONTH, -8); //월(MONTH)에서 12을 뺀다, 2020년 1월 1일
+```
+
+## 형식화 클래스
+### DecimalFormat
+### SimpleDateFormat
