@@ -69,8 +69,8 @@
 
 <br/>
 
-### Set인터페이스의 메서드 - Collection인터페이스와 동일 <br />
-### 집합과 관련된 메서드(Collection 변화가 있으면 true, 아니면 false를 반환)
+Set인터페이스의 메서드 - Collection인터페이스와 동일 <br />
+집합과 관련된 메서드(Collection 변화가 있으면 true, 아니면 false를 반환)
 
 <br />
 
@@ -123,7 +123,7 @@ for(int i=0; i <list.size(); i++;){
     list.remove(i);
 }
 ```
-<img src="../img/1.png" width="400px">
+<img src="../img/1.png" width="600px">
 
 → for문 다 돌았는데도, 값 남아있을 수 있음! why? 삭제할때마다 값이 올라가기 때문(앞으로 땡겨져서) 그래서 마지막 객체부터 삭제하면 됨
 
@@ -135,7 +135,7 @@ for(int i=list.size()-1; i >=0; i--;){
     list.remove(i);
 }
 ```
-<img src="../img/2.png" width="400px">
+<img src="../img/2.png" width="600px">
 
 ## LinkedList
 - 배열의 장점: 구조가 간단하고, 데이터를 읽는데 걸리는 시간(접근시간, access time)이 짧다.
@@ -181,4 +181,45 @@ Java API에서 찾아보면 2번의 목록이 있음
 
 Queue g = new LinkedList(); 이렇게
 
-<img src="../img/stack&queue.png" width="400px">
+<img src="../img/stack&queue.png" width="500px">
+
+## 스택과 큐의 활용
+스택활용의 예 - 수식계산, 수식괄호 검사, 위드프로세서의 undo/redo, 웹브라우저의 뒤로/앞으로
+큐의 활용 예 - 최근사용문서, 인쇄작업 대기목록, 버퍼
+
+<br />
+
+스택활용의 예 중 수식괄호 확인
+<img src="../img/stack.png" width="800px">
+<img src="../img/result.png" width="200px">
+
+## lterator, Listlterator, Enumeration
+- 컬렉션에 저장된 데이터를 접근하는 사용되는 인터페이스
+
+|메서드|설명|
+|-----------------|-----------------------|
+|boolean hasNext()|읽어 올 요소가 남아있는지 확인한다. 있으면 true, 없으면 false를 반환한다.
+|Object next()|다음 요소를 읽엉온다. next()호출하기 전에 hasNext()를 호출해서 읽어 올 요소가 있는지 확인하는 것이 안전하다.
+
+<br />
+
+- Enumeration은 lterator의 구버전
+- Listlterator는 lterator의 접근성을 향상시킨 것(단방향 -> 양방향)
+- 컬렉션에 저장된 요소들을 읽어오는 방법을 표준화한 것
+ex) 리스트를 쓰다가 set으로 바꿨어, 그러면 둘의 구조가 다르니까
+저장되어 있는 요소를 읽어오는 코드가 다름, lterator쓰면 읽어오는 코드를 바꿀필요 없음
+- 컬렉션에 iterator()를 호출해서 lterator를 구현한 객체를 얻어서 사용
+
+<img src="../img/lterator.png" width="500px">
+
+<br /> 
+
+- iterator는 1회용이라 다 쓰면 나면 다시 객체를 얻어와야함
+- Map에는 iterator()가 없다!
+- iterator()는 collection에 정의되어있는데, Map은 collection의 자손이 아니기 떄문에!
+- 따라서 keySet(), entrySet(), values()를 호출해서 iterator()사용
+```java
+Map map = new HashMap();
+
+Iterator it = map.entrySet().iterator();
+```
