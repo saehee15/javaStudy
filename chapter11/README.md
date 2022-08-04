@@ -223,3 +223,30 @@ Map map = new HashMap();
 
 Iterator it = map.entrySet().iterator();
 ```
+<br /> 
+
+## Arrays
+1.배열의 출력 - toString()<br/>
+2.배열의 복사 - copyOf(), copyOfRange() : 새로운 배열 생성해서 반환 <br/>
+3.배열 채우기 - fill(), setAll() <br/>
+4.배열의 정렬과 검색 - sort(), binarySearch() : 이진탐색은 정렬되어있을때만 가능 <br/>
+5.다차원 배열의 출력 - deepToString() <br/>
+6.다차원 배열의 비교 - deepEquals() <br/>
+7.배열을 List로 변환 - asList(Object.. a) : 읽기전용 <br/>
+8.람다와 스트림(14장) 관련 - parallelXXX(), spliterator(), stream()
+
+## Comparator와 Comparable
+: 객체 정렬에 필요한 메서드(정렬기준 제공)를 정의한 인터페이스
+```
+Comparable 기본 정렬기준으로 구현하는데 사용, compareTo로 비교, 객체를 나 자신과 비교
+
+Comparator 기본 정렬기준 외에 다른 기준으로 정렬하고자 할 떄 사용, compare로 비교, 객체1,2비교
+```
+
+sort 정렬!
+1. 두대상 비교
+2. 자리 바꿈
+
+Comparable(), Comparator()는 두 객체의 비교결과를 반환하도록 작성
+같으면 0, 오른쪽이 크면 음수(-), 작으면 양수(+)
+CompareTo() * -1 // -1을 곱해서 기본 정렬방식의 역으로 변경한다.
