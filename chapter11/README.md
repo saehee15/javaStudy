@@ -250,3 +250,96 @@ sort 정렬!
 Comparable(), Comparator()는 두 객체의 비교결과를 반환하도록 작성
 같으면 0, 오른쪽이 크면 음수(-), 작으면 양수(+)
 CompareTo() * -1 // -1을 곱해서 기본 정렬방식의 역으로 변경한다.
+
+<br/><br/>
+
+## HashSet - 순서 X, 중복 X
+### HashSet
+- Set인터페이스를 구현한 대표적인 컬력센 클래스
+- 순서를 유지하려면, LinkedHashSet클래스를 사용하면 된다
+### TreeSet
+- 범위 검색과 정렬에 유리한 컬렉션 클래스
+- HashSet보다 데이터 추가, 삭제에 시간이 더 걸림
+
+* Set은 정렬 불가, sort써도 안됨, sort는 ()안에 List가 와야함
+그래서 Set을 List를 옮기고, sort해야함
+
+```
+List list = new LinkedList(set);
+Collections.sort(list);
+System.out.println(list);
+```
+
+* HashSet은 객체를 저장하기 전에 기존에 같은 객체가 있는지 확인, 같은 객체가 없으면 저장하고, 있으면 저장하지 않는다.
+* boolan add(Object o)는 저장할 객체의 equals()와 hashCode()를 호출
+
+<br/><br/>
+
+## TreeSet : 범위 탐색, 정렬
+-> 정렬 필요 없음
+
+<br/>
+### 이진 탐색 트리(binary search tree)
+: 부모보다 작은 값을 왼쪽, 큰 값을 오른쪽에 저장
+: 데이터가 많아질수록 추가, 삭제에 시간이 더 걸림(비교 횟수 증가) <br/>
+
+*HashSet은 equals(), hashCode()로 비교, TreeSet은 compare()를 호출해서 비교
+
+<br/>
+
+## TreeSet - 주요 생성자와 메서드
+*여기서는 add(), remove(), size(), isEmpty() 등등은 제외
+
+|메서드|설명|
+|-----------------|-----------------------|
+|TreeSet()|기본생성자
+|TreeSet(Collection c)|주어진 컬렉션을 저장하는 TreeSet을 생성
+|TreeSet(Comparator comp)|주어진 정렬기준으로 정렬하는 TreeSet을 생성
+|Object first()|정렬된 순서에서 첫번째 객체를 반환한다
+|Object last()|정렬된 순서에서 마지막 객체를 반환한다
+|Object ceiling(Object o)|지정된 객체와 같은 객체를 반환, 없으면 큰 값을 가진 객체 중 제일 가까운 값의 객체를 반환, 없으면 null
+|Object floor(Object o)|지정된 객체와 같은 객체를 반환, 없으면 작은 값을 가진 객체 중 제일 가까운 값의 객체를 반환, 없으면 null
+|Object higher(Object o)|지정된 객체보다 값을 가진 객체 중 제일 가까운 값의 객체를 반환, 없으면 null
+|Object lower(Object o)|지정된 객체보다 작은 값을 가진 객체 중 제일 가까운 값의 객체를 반환, 없으면 null
+SortedSet SubSet(Object fromElement, Object toElement)|범위 검색(fromElement와 toElement사이)의 결과를 반환한다.(끝 범위인 toElement는 범위에 포함되지 않음)
+SortedSet headSet(Object toElement)|지정된 객체보다 작은 값읠 객체들을 반환한다.
+SortedSet tailSet(Object toElement)|지정된 객체보다 큰 값의 객체들을 반환한다.
+
+<br /><br />
+
+*TreeSet 범위검색에 유리! => subSet() 사용 
+*headSet(), tailSet(), subSet()등은 TreeSet의 메소드이기때문에 TreeSet객체 생성시,
+Set으로 객체생성하면 오류
+```
+Tree set = new TreeSet(); (O)
+Set set = new TreeSet(); (X)
+
+```
+<br />
+
+### 트리 순회
+: 이진 트리의 모든 노드를 한번씩 읽는 것을 트리 순회라 한다.
+: 전위, 중위, 후휘 순회법이 있으며, 중위 순회를 하면 오름차순으 정렬된다
+
+
+
+<br/><br/>
+
+## HashMap과 Hashtable - 순서X, 중복(키X, 값O)
+-Map인터페이스를 구현, 데이터를 키와 값의 쌍으로 저장
+-Hashtable 동기화, HashMap은 비동기화, 쓰레드에서 자세히 
+
+### HashMap
+-Map인터페이스를 구현한 대표적인 컬렉션 클래스
+-순서를 유지하려면 LinkedHashMap클래스 사용하면 된다.
+
+### TreeMap
+-TreeSet이 TreeMap을 가지고 만듬
+-범위 검색과 정렬에 유리한 컬렉션 클래스
+-HashMap보다 데이터 추가, 삭제에 시간이 더 걸림
+
+### HashMap의 키(key)와 값(value)
+-해싱(hashing)기법으로 데이터를 저장, 데이터가 많아도 검색이 빠르다.
+-Map인터페이스르 구현, 데이터를 키와 값의 쌍으로 저장
+
+
