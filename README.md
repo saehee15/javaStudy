@@ -11,7 +11,7 @@
 7. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter09">Chapter 09 java.lang 패키지와 유용한 클래스</a>
 8. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter10">Chapter 10 날짜와 시간 & 형식화</a>
 9. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter11">Chapter 11 컬렉션 프레임웍</a>
-10. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter11">Chapter 12 지네릭스, 열거형, 애너테이션</a>
+10. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter12">Chapter 12 지네릭스, 열거형, 애너테이션</a>
 
 
 <br/>
