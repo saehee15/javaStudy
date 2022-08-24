@@ -13,6 +13,7 @@
 9. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter11">Chapter 11 컬렉션 프레임웍</a>
 10. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter12">Chapter 12 지네릭스, 열거형, 애너테이션</a>
 11. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter13">Chapter 13 쓰레드</a>
+12. <a href="https://github.com/saehee15/javaStudy/tree/main/chapter14">Chapter 14 람다와 스트림</a>
 
 
 <br/>
@@ -97,5 +98,11 @@
 # Chapter 13 쓰레드
  <blockquote>
 - 실 공부일자: 2022.08.15(월)~<br/>
+</blockquote>
+<br /><br />
+
+# Chapter 14 람다와 스트림
+ <blockquote>
+- 실 공부일자: 2022.08.21(일)~<br/>
 </blockquote>
 <br /><br />
