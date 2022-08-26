@@ -38,3 +38,21 @@ int max(int a, int b){
 ## 람다식은 익명 함수? 익명 객체!!
 - 람다식은 익명 함수가 아니라 익명 객체다
 - 람다식(익명 객체)을 다루기 위한 참조변수가 필요, 참조변수의 타입은?
+
+
+<br/><br/>
+
+## 함수형 인터페이스
+-단 하나의 추상 메서드만 선언된 인터페이스
+```java
+@FunctionalInterface
+interface MyFunction {
+    public abstract int max(int a, int b);
+}
+```
+-함수형 인터페이스 타입의 참조변수로 람다식을 참조할 수 있음!
+(단, 함수형 인터페이스의 메세드와 람다식의 매개변수 개수와 반환타입이 같아야 함)
+
+## Predicate 결합
+-and(), or(), negate()로 두 Predicate를 하나로 결합(default메서드)
+-등가비교를 위한 Predicate의 작성에서 isEqual()를 사용(static메서드)
